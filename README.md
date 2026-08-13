@@ -8,120 +8,215 @@
 
 <style>
 :root{
-  --bg:#070b12;
-  --panel:#0d1420;
-  --panel2:#111b2a;
-  --line:#203044;
-  --text:#edf5ff;
-  --muted:#91a4ba;
-  --cyan:#45d9ff;
-  --blue:#5b7cff;
-  --green:#4ade80;
-  --purple:#a78bfa;
+  --bg:#05080d;
+  --bg2:#08101a;
+  --panel:rgba(12,20,31,.82);
+  --panel-solid:#0c1521;
+  --line:#1c2b3c;
+  --line-bright:#30465f;
+  --text:#f4f8fc;
+  --muted:#9aacbf;
+  --cyan:#43d9ff;
+  --blue:#667cff;
+  --purple:#a98bff;
+  --green:#52e18b;
+  --shadow:0 24px 80px rgba(0,0,0,.42);
 }
 *{box-sizing:border-box;scroll-behavior:smooth}
+html{scroll-padding-top:88px}
 body{
   margin:0;
-  font-family:Inter,Segoe UI,Arial,sans-serif;
   color:var(--text);
+  font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
   background:
-    radial-gradient(circle at 15% 10%,rgba(69,217,255,.12),transparent 28%),
-    radial-gradient(circle at 85% 25%,rgba(91,124,255,.12),transparent 30%),
-    var(--bg);
+    radial-gradient(circle at 12% 8%,rgba(67,217,255,.12),transparent 25%),
+    radial-gradient(circle at 88% 18%,rgba(102,124,255,.12),transparent 28%),
+    linear-gradient(180deg,var(--bg),var(--bg2) 50%,var(--bg));
+  overflow-x:hidden;
 }
 body:before{
   content:"";
-  position:fixed;inset:0;pointer-events:none;opacity:.22;
-  background-image:linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),
-                   linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);
-  background-size:40px 40px;
+  position:fixed;inset:0;pointer-events:none;z-index:-1;opacity:.18;
+  background-image:
+    linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);
+  background-size:44px 44px;
 }
 a{text-decoration:none;color:inherit}
 .nav{
-  position:sticky;top:0;z-index:20;
-  display:flex;justify-content:space-between;align-items:center;
-  padding:16px 6%;background:rgba(7,11,18,.82);
-  backdrop-filter:blur(16px);border-bottom:1px solid var(--line);
+  position:sticky;top:0;z-index:50;
+  display:flex;justify-content:space-between;align-items:center;gap:20px;
+  padding:15px 6%;
+  background:rgba(5,8,13,.72);
+  backdrop-filter:blur(20px);
+  border-bottom:1px solid rgba(48,70,95,.55);
 }
-.logo{font-weight:800;letter-spacing:.08em}
+.logo{font-weight:900;letter-spacing:.1em;font-size:14px}
 .logo span{color:var(--cyan)}
-.navlinks{display:flex;gap:8px;flex-wrap:wrap}
+.navlinks{display:flex;gap:7px;flex-wrap:wrap;justify-content:flex-end}
 .navlinks a,.btn{
-  border:1px solid var(--line);background:#0c1420;color:var(--text);
-  padding:9px 14px;border-radius:9px;font-size:13px;cursor:pointer;
-  transition:.25s;
+  border:1px solid var(--line);
+  background:rgba(12,21,33,.72);
+  color:var(--text);
+  padding:10px 14px;border-radius:10px;
+  font-size:13px;font-weight:700;
+  transition:transform .25s,border-color .25s,box-shadow .25s,background .25s;
 }
-.navlinks a:hover,.btn:hover{border-color:var(--cyan);transform:translateY(-2px);box-shadow:0 0 22px rgba(69,217,255,.12)}
+.navlinks a:hover,.navlinks a.active,.btn:hover{
+  border-color:var(--cyan);
+  background:rgba(67,217,255,.08);
+  transform:translateY(-2px);
+  box-shadow:0 0 25px rgba(67,217,255,.12);
+}
 .hero{
-  min-height:92vh;display:grid;grid-template-columns:1.25fr .75fr;
-  gap:50px;align-items:center;padding:80px 8%;
-}
-.eyebrow{color:var(--cyan);font-family:monospace;letter-spacing:.12em}
-h1{font-size:clamp(42px,7vw,78px);line-height:.98;margin:14px 0}
-.gradient{background:linear-gradient(90deg,var(--cyan),var(--blue),var(--purple));-webkit-background-clip:text;background-clip:text;color:transparent}
-.hero p{max-width:720px;color:var(--muted);font-size:18px;line-height:1.8}
-.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:25px}
-.primary{background:linear-gradient(90deg,#1c83a6,#4b61d7);border:0}
-.terminal{
-  border:1px solid var(--line);background:rgba(13,20,32,.9);border-radius:18px;
-  box-shadow:0 25px 80px rgba(0,0,0,.35);overflow:hidden;
-}
-.termhead{padding:12px 16px;border-bottom:1px solid var(--line);display:flex;gap:7px}
-.dot{width:10px;height:10px;border-radius:50%;background:#46556a}
-.termbody{padding:24px;font:14px/1.9 monospace;color:#c9d7e8}
-.green{color:var(--green)}.cyan{color:var(--cyan)}.purple{color:var(--purple)}
-.profile-wrap{display:flex;justify-content:center}
-.profile{
-  width:min(340px,75vw);aspect-ratio:1;border-radius:50%;object-fit:cover;
-  border:4px solid #263a52;box-shadow:0 0 0 12px rgba(69,217,255,.04),0 0 70px rgba(69,217,255,.18);
-}
-section{padding:90px 8%;position:relative}
-.section-title{font-size:36px;margin:0 0 12px}
-.section-sub{color:var(--muted);max-width:720px;line-height:1.7}
-.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:35px}
-.card{
-  background:linear-gradient(145deg,rgba(17,27,42,.95),rgba(10,16,26,.95));
-  border:1px solid var(--line);border-radius:16px;padding:24px;
-  transition:.3s;position:relative;overflow:hidden;
-}
-.card:hover{transform:translateY(-6px);border-color:#365273}
-.card h3{margin:0 0 10px;color:var(--cyan)}
-.card p,.card li{color:var(--muted);line-height:1.7}
-.tags{display:flex;gap:8px;flex-wrap:wrap;margin-top:16px}
-.tag{padding:6px 9px;border-radius:999px;background:#162234;border:1px solid #263a52;color:#c8d8ea;font:12px monospace}
-.pipeline{
-  display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-top:35px;align-items:center;
-}
-.node{
-  text-align:center;padding:20px 10px;background:#0d1725;border:1px solid #263a52;border-radius:12px;
+  min-height:calc(100vh - 72px);
+  display:flex;align-items:center;
+  padding:90px 8% 100px;
   position:relative;
 }
-.node:after{content:"→";position:absolute;right:-17px;top:28px;color:var(--cyan);font-size:20px}
+.hero>div{max-width:980px}
+.eyebrow{
+  color:var(--cyan);
+  font:700 12px/1.5 ui-monospace,SFMono-Regular,Menlo,monospace;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+}
+h1{
+  max-width:1000px;
+  font-size:clamp(48px,8vw,96px);
+  line-height:.94;
+  letter-spacing:-.055em;
+  margin:18px 0 24px;
+}
+.gradient{
+  background:linear-gradient(90deg,var(--cyan),var(--blue),var(--purple));
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+.hero p{
+  max-width:780px;
+  color:var(--muted);
+  font-size:19px;
+  line-height:1.8;
+  margin:0;
+}
+.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:44px}
+.primary{
+  color:#041017;
+  background:linear-gradient(100deg,var(--cyan),#7182ff);
+  border:0;
+  box-shadow:0 12px 35px rgba(67,217,255,.16);
+}
+.impact{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:12px;
+  padding:0 8% 35px;
+}
+.impact-item{
+  padding:20px;
+  border:1px solid var(--line);
+  border-radius:15px;
+  background:linear-gradient(145deg,rgba(17,29,44,.85),rgba(8,14,23,.82));
+}
+.impact-item strong{display:block;font-size:24px;color:var(--text);letter-spacing:-.03em}
+.impact-item span{display:block;margin-top:4px;color:var(--muted);font-size:13px}
+section{padding:95px 8%;position:relative}
+.section-title{font-size:clamp(32px,4vw,48px);letter-spacing:-.04em;margin:8px 0 12px}
+.section-sub{color:var(--muted);max-width:780px;line-height:1.8;margin:0}
+.grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
+  margin-top:38px;
+}
+.card{
+  min-height:220px;
+  background:linear-gradient(145deg,rgba(17,28,43,.94),rgba(8,14,23,.94));
+  border:1px solid var(--line);
+  border-radius:18px;
+  padding:26px;
+  transition:.3s;
+  position:relative;
+  overflow:hidden;
+  box-shadow:0 12px 40px rgba(0,0,0,.16);
+}
+.card:before{
+  content:"";
+  position:absolute;inset:0;
+  background:linear-gradient(120deg,rgba(67,217,255,.06),transparent 45%);
+  opacity:0;transition:.3s;
+}
+.card:hover{transform:translateY(-7px);border-color:var(--line-bright);box-shadow:var(--shadow)}
+.card:hover:before{opacity:1}
+.card h3{position:relative;margin:0 0 12px;color:var(--text);font-size:19px}
+.card p,.card li{position:relative;color:var(--muted);line-height:1.75}
+.tags{position:relative;display:flex;gap:8px;flex-wrap:wrap;margin-top:18px}
+.tag{
+  padding:6px 9px;border-radius:999px;
+  background:#101d2c;border:1px solid #22364d;
+  color:#c9d9e9;font:12px ui-monospace,SFMono-Regular,Menlo,monospace;
+}
+.pipeline{
+  display:grid;grid-template-columns:repeat(5,1fr);
+  gap:12px;margin-top:38px;align-items:stretch;
+}
+.node{
+  text-align:center;padding:24px 12px;
+  background:var(--panel);border:1px solid var(--line);
+  border-radius:14px;position:relative;
+}
+.node:after{
+  content:"→";position:absolute;right:-18px;top:29px;
+  color:var(--cyan);font-size:21px;
+}
 .node:last-child:after{display:none}
-.node b{display:block;color:var(--cyan);margin-bottom:6px}
-.timeline{border-left:1px solid #29415b;margin-top:35px;padding-left:28px}
-.role{margin-bottom:35px;position:relative}
-.role:before{content:"";position:absolute;left:-35px;top:5px;width:11px;height:11px;border-radius:50%;background:var(--cyan);box-shadow:0 0 18px var(--cyan)}
-.role .date{color:var(--cyan);font:12px monospace}
-.role h3{margin:7px 0}.role p{color:var(--muted);line-height:1.7}
+.node b{display:block;color:var(--cyan);font:700 11px ui-monospace,monospace;margin-bottom:8px}
+.terminal{
+  border:1px solid var(--line);background:#070d15;border-radius:18px;
+  box-shadow:var(--shadow);overflow:hidden;
+}
+.termhead{padding:13px 16px;border-bottom:1px solid var(--line);display:flex;gap:7px}
+.dot{width:10px;height:10px;border-radius:50%;background:#42546a}
+.termbody{padding:25px;font:14px/2 ui-monospace,SFMono-Regular,Menlo,monospace;color:#c9d7e8}
+.green{color:var(--green)}.cyan{color:var(--cyan)}.purple{color:var(--purple)}
+.timeline{border-left:1px solid #29415b;margin-top:40px;padding-left:32px}
+.role{margin-bottom:42px;position:relative}
+.role:before{
+  content:"";position:absolute;left:-39px;top:4px;width:12px;height:12px;
+  border-radius:50%;background:var(--cyan);box-shadow:0 0 20px rgba(67,217,255,.65);
+}
+.role .date{color:var(--cyan);font:700 11px ui-monospace,monospace;letter-spacing:.1em}
+.role h3{margin:8px 0 9px;font-size:20px}
+.role p{color:var(--muted);line-height:1.8;max-width:900px;margin:0}
 .contact{
-  display:grid;grid-template-columns:1fr 1fr;gap:25px;align-items:center;
-  background:linear-gradient(120deg,rgba(69,217,255,.08),rgba(167,139,250,.06));
-  border:1px solid var(--line);border-radius:20px;padding:35px;
+  display:grid;grid-template-columns:1fr auto;gap:30px;align-items:center;
+  background:linear-gradient(120deg,rgba(67,217,255,.08),rgba(169,139,255,.08));
+  border:1px solid var(--line);border-radius:22px;padding:42px;
+  box-shadow:var(--shadow);
 }
-footer{padding:35px 8%;border-top:1px solid var(--line);color:var(--muted);text-align:center}
-@media(max-width:850px){
-  .hero,.contact{grid-template-columns:1fr}
+.contact .actions{margin-top:0;justify-content:flex-end}
+footer{padding:38px 8%;border-top:1px solid var(--line);color:var(--muted);text-align:center;font-size:13px}
+@media(max-width:900px){
+  .hero{padding-top:70px}
   .grid{grid-template-columns:1fr 1fr}
+  .impact{grid-template-columns:1fr 1fr}
   .pipeline{grid-template-columns:1fr}
-  .node:after{content:"↓";right:50%;top:auto;bottom:-25px}
+  .node:after{content:"↓";right:50%;top:auto;bottom:-27px}
   .node:last-child:after{display:none}
+  .contact{grid-template-columns:1fr}
+  .contact .actions{justify-content:flex-start}
 }
-@media(max-width:560px){
-  .nav{align-items:flex-start;gap:10px;flex-direction:column}
-  .grid{grid-template-columns:1fr}
-  section{padding:65px 6%}
-  .hero{padding:65px 6%}
+@media(max-width:600px){
+  .nav{align-items:flex-start;flex-direction:column}
+  .navlinks{justify-content:flex-start}
+  .hero{padding:60px 6% 70px}
+  h1{font-size:clamp(44px,14vw,68px)}
+  .hero p{font-size:17px}
+  section{padding:70px 6%}
+  .grid,.impact{grid-template-columns:1fr}
+  .impact{padding:0 6% 25px}
+  .contact{padding:28px}
 }
 </style>
 </head>
@@ -141,12 +236,12 @@ footer{padding:35px 8%;border-top:1px solid var(--line);color:var(--muted);text-
 <header class="hero">
   <div>
     <div class="eyebrow">// CLOUD • INFRASTRUCTURE • AUTOMATION</div>
-    <h1>Engineering <span class="gradient">resilient</span> infrastructure.</h1>
+    <h1>I build <span class="gradient">secure, scalable</span> infrastructure that works.</h1>
     <p>
-      Lungani Mncwango — Cloud Engineer, IT Infrastructure Lead, Azure & AWS Specialist,
-      IT Support L3, Network Infrastructure and Cyber Security L3.
-      10+ years of experience across cloud, hybrid infrastructure, security,
-      disaster recovery and enterprise service operations.
+      I’m Lungani Mncwango — a Cloud & Infrastructure Engineer focused on
+      Azure, AWS, automation, cybersecurity and resilient enterprise operations.
+      I turn complex infrastructure into environments that are easier to deploy,
+      secure, monitor and support.
     </p>
     <div class="actions">
       <a class="btn primary" href="#projects">Explore My Work</a>
@@ -155,6 +250,14 @@ footer{padding:35px 8%;border-top:1px solid var(--line);color:var(--muted);text-
     </div>
   </div>
   
+
+<section class="impact">
+  <div class="impact-item"><strong>10+</strong><span>Years in IT</span></div>
+  <div class="impact-item"><strong>Cloud</strong><span>Azure + AWS</span></div>
+  <div class="impact-item"><strong>IaC</strong><span>Automation mindset</span></div>
+  <div class="impact-item"><strong>24/7</strong><span>Enterprise operations</span></div>
+</section>
+
 <section id="skills">
   <div class="eyebrow">// TECH_STACK</div>
   <h2 class="section-title">Core Engineering Skills</h2>
@@ -259,37 +362,46 @@ footer{padding:35px 8%;border-top:1px solid var(--line);color:var(--muted);text-
 
 <section id="experience">
   <div class="eyebrow">// CAREER_TIMELINE</div>
-  <h2 class="section-title">Experience</h2>
+  <h2 class="section-title">A decade of solving infrastructure problems.</h2>
+  <p class="section-sub">From frontline technical support to senior cloud and infrastructure operations, the focus has stayed the same: keep systems secure, available and moving forward.</p>
+
   <div class="timeline">
     <div class="role">
       <div class="date">AUG 2025 — PRESENT</div>
-      <h3>24/7 Senior Service Engineer — Network Infrastructure Support [EMEA]</h3>
-      <p>Wavenet. Complex IT troubleshooting, Microsoft 365, SharePoint, Intune, Azure/Entra ID/AVD, Active Directory, networking, firewalls, VPN, VMware/Hyper-V and Veeam. Deliver advanced technical support, taking ownership of complex incidents through to resolution. •Document recovery procedures and mentor junior engineers on backup best practices. •Ensure SLA compliance and continuous improvement in system resilience. and supports SLA compliance.</p>
+      <h3>Senior Service Engineer — Network Infrastructure Support [EMEA]</h3>
+      <p><strong>Wavenet</strong> · Complex IT troubleshooting across Microsoft 365, SharePoint, Intune, Azure, Entra ID, AVD, Active Directory, networking, firewalls, VPN, VMware, Hyper-V and Veeam. Own complex incidents through resolution while supporting SLA compliance and service resilience.</p>
     </div>
+
     <div class="role">
       <div class="date">FEB 2024 — AUG 2025</div>
       <h3>Regional Support Engineer — Contract</h3>
-      <p>Ardagh Group. Managed Office 365, Azure, SharePoint, Teams and desktop systems; supported infrastructure, servers, Active Directory, Group Policy, disaster recovery and Intune.</p>
+      <p><strong>Ardagh Group</strong> · Managed Office 365, Azure, SharePoint, Teams, desktop systems, servers, Active Directory, Group Policy, disaster recovery and Intune across regional environments.</p>
     </div>
+
     <div class="role">
       <div class="date">AUG 2022 — FEB 2024</div>
-      <h3>IT Infrastructure & Security Manager</h3>
-      <p>Nketu Projects LTD. Led IT strategy, infrastructure, cybersecurity, risk management, disaster recovery, project delivery, governance, budgeting and vendor engagement.</p>
+      <h3>IT Infrastructure &amp; Security Manager</h3>
+      <p><strong>Nketu Projects LTD</strong> · Led IT strategy, infrastructure, cybersecurity, risk management, disaster recovery, governance, project delivery, budgeting and vendor engagement.</p>
     </div>
+
     <div class="role">
       <div class="date">SEP 2019 — AUG 2022</div>
       <h3>Support Technician</h3>
-      <p>Altron Bytes Managed Solutions. Technical support, backup monitoring, restore requests, audits, asset recovery documentation and field support across client environments.</p>
-    <div class="date">Feb 2018 – Apr 2019 </div>
-      <h3> Field Service Engineer</h3>
-      <p>Gijima Technology People - End user support to financial clients in the retail environment for speed point devices: installations, configuration, de-installations, maintenance, asset verification and management. Responsible for application and maintenance of assigned equipment and accurate timekeeping in ESS. 
-Provided field support for POS and retail banking systems, performing data restoration and system imaging as part of incident resolution. Ensured backup consistency and data retention compliance during onsite maintenance and equipment replacement. Supported large-scale banking and financial services environments. Maintained high availability of critical cash-management systems. Contributed to successful FNB and Capitec support initiatives. Achieved SLA compliance across field service operations. .</p>
+      <p><strong>Altron Bytes Managed Solutions</strong> · Delivered technical support, backup monitoring, restore requests, audits, asset recovery documentation and field support across client environments.</p>
     </div>
+
     <div class="role">
-      <div class="date">Feb 2015 – Feb 2018</div>
-      <h3>IT Technician — Permanent</h3>
-      <p>Matrix Warehouse Computers  Office 365, Azure, Installed Microsoft 365, networks, and printers for clients. Supported Windows OS, Linux, and Windows Server 2012-16 environments. Delivered desktop support and implemented automated backup schedules using local and cloud-based solutions. Recovered client systems from OS failures and data corruption, maintaining 100% recovery rate on verified backups..</p>
+      <div class="date">FEB 2018 — APR 2019</div>
+      <h3>Field Service Engineer</h3>
+      <p><strong>Gijima Technology People</strong> · Supported financial-sector retail and POS environments through installations, configuration, maintenance, asset verification, data restoration and system imaging. Supported FNB and Capitec initiatives while maintaining SLA-focused field operations.</p>
     </div>
+
+    <div class="role">
+      <div class="date">FEB 2015 — FEB 2018</div>
+      <h3>IT Technician — Permanent</h3>
+      <p><strong>Matrix Warehouse Computers</strong> · Delivered Office 365, Azure, Windows, Linux, Windows Server, networking and printer support. Implemented automated backup schedules and recovered client systems from OS failures and data corruption using verified backups.</p>
+    </div>
+  </div>
 </section>
 
 <section id="contact">
@@ -308,8 +420,28 @@ Provided field support for POS and retail banking systems, performing data resto
 </section>
 
 <footer>
-  © 2026 Lungani Mncwango · Cloud Engineer · IT Infrastructure · Automation · Cybersecurity
+  © 2026 Lungani Mncwango · Cloud · Infrastructure · Automation · Cybersecurity
 </footer>
+
+<script>
+  // Smooth active-section navigation
+  const links = [...document.querySelectorAll('.navlinks a')];
+  const sections = links
+    .map(link => document.querySelector(link.getAttribute('href')))
+    .filter(Boolean);
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        links.forEach(link => link.classList.remove('active'));
+        const active = links.find(link => link.getAttribute('href') === '#' + entry.target.id);
+        if (active) active.classList.add('active');
+      }
+    });
+  }, { rootMargin: '-35% 0px -55% 0px' });
+
+  sections.forEach(section => observer.observe(section));
+</script>
 </body>
 </html>
     
