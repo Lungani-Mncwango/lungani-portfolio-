@@ -38,6 +38,40 @@ section{padding:45px 6%}.section-title{font-size:clamp(28px,3.4vw,42px);letter-s
 /* mobile */
 @media(max-width:850px){.hero{grid-template-columns:1fr;padding:38px 5% 25px}.hero-dashboard{max-width:620px;margin:20px auto 0}.grid{grid-template-columns:1fr 1fr}.dashboard-section{grid-template-columns:1fr}.timeline{grid-template-columns:1fr}.pipeline{grid-template-columns:1fr}.node:after{content:"↓";right:50%;top:auto;bottom:-15px}.node:last-child:after{display:none}.impact{padding-left:5%;padding-right:5%}}
 @media(max-width:560px){.nav{align-items:flex-start;flex-direction:column;padding:9px 4%}.navlinks{width:100%;overflow-x:auto;flex-wrap:nowrap;justify-content:flex-start}.navlinks a{white-space:nowrap}.hero{padding:30px 4% 22px}h1{font-size:clamp(40px,14vw,58px)}.hero p{font-size:13px}.impact{grid-template-columns:1fr 1fr;padding:0 4% 12px}.impact-item{padding:10px}.impact-item strong{font-size:16px}section{padding:35px 4%}.grid{grid-template-columns:1fr}.section-title{font-size:29px}.contact{grid-template-columns:1fr}.contact .actions{justify-content:flex-start}.dashboard-card{padding:13px}.detail-grid{grid-template-columns:1fr 1fr}}
+
+/* ===== COMPACT CLICKABLE DASHBOARDS ===== */
+.mini-dashboard-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;margin-top:20px}
+.mini-dash{
+  appearance:none;border:1px solid var(--line);background:linear-gradient(145deg,#0d1926,#08111b);
+  color:var(--text);border-radius:12px;padding:13px;display:grid;grid-template-columns:32px 1fr 16px;
+  align-items:center;gap:9px;text-align:left;cursor:pointer;min-height:68px;transition:.2s
+}
+.mini-dash:hover,.mini-dash.active{border-color:var(--cyan);transform:translateY(-2px);background:linear-gradient(145deg,#112438,#09131f);box-shadow:0 10px 28px rgba(0,0,0,.22)}
+.mini-icon{width:29px;height:29px;border-radius:8px;display:grid;place-items:center;background:rgba(66,220,255,.08);border:1px solid rgba(66,220,255,.2);color:var(--cyan);font-size:15px}
+.mini-dash b{display:block;font-size:11px}.mini-dash small{display:block;color:var(--muted);font-size:8px;margin-top:3px}.mini-dash strong{color:var(--cyan);font-size:15px}
+.skill-detail-shell{margin-top:9px}
+.skill-detail{display:none;grid-template-columns:1fr auto;align-items:center;gap:20px;border:1px solid var(--line);border-radius:12px;padding:15px 17px;background:linear-gradient(100deg,rgba(66,220,255,.055),rgba(107,124,255,.035))}
+.skill-detail.active{display:grid;animation:panelIn .22s ease}
+.detail-kicker{color:var(--cyan);font:700 8px ui-monospace,monospace;letter-spacing:.12em}
+.skill-detail h3,.project-detail h3{font-size:15px;margin:4px 0}.skill-detail p,.project-detail p{color:var(--muted);font-size:10px;line-height:1.5;margin:0;max-width:650px}
+.detail-tags,.project-meta{display:flex;justify-content:flex-end;gap:5px;flex-wrap:wrap}.detail-tags span,.project-meta span{padding:5px 7px;border:1px solid #233b53;border-radius:99px;background:#0b1724;color:#c9d9e8;font:8px ui-monospace,monospace;white-space:nowrap}
+.flow-dashboard{display:grid;grid-template-columns:repeat(5,1fr);gap:7px;margin-top:20px}
+.flow-step{appearance:none;position:relative;border:1px solid var(--line);background:#09131f;color:var(--text);border-radius:10px;padding:12px 8px;cursor:pointer;text-align:left;transition:.2s}
+.flow-step:hover,.flow-step.active{border-color:var(--cyan);background:rgba(66,220,255,.06);transform:translateY(-2px)}
+.flow-step b{display:block;color:var(--cyan);font:700 8px ui-monospace,monospace}.flow-step span{display:block;font-size:10px;font-weight:900;margin-top:4px}.flow-step small{display:block;color:var(--muted);font-size:8px;margin-top:3px}
+.flow-detail{display:grid;grid-template-columns:1fr auto;align-items:center;gap:15px;margin-top:9px;border:1px solid var(--line);border-radius:11px;padding:13px 15px;background:#08121d}
+.flow-detail h3{margin:4px 0;font-size:13px}.flow-detail p{margin:0;color:var(--muted);font-size:10px;line-height:1.5}.flow-status{font:800 9px ui-monospace,monospace;color:var(--green);white-space:nowrap}.flow-status b{color:var(--cyan);padding-left:8px}
+.compact-terminal{margin-top:9px!important}.compact-terminal .termhead{align-items:center}.compact-terminal .termhead small{margin-left:auto;color:var(--muted);font:8px ui-monospace,monospace}
+.project-dashboard-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:20px}
+.project-dash{appearance:none;border:1px solid var(--line);background:linear-gradient(145deg,#0d1926,#08111b);color:var(--text);border-radius:11px;padding:13px;text-align:left;cursor:pointer;min-height:73px;transition:.2s}
+.project-dash:hover,.project-dash.active{border-color:var(--cyan);transform:translateY(-2px);box-shadow:0 10px 28px rgba(0,0,0,.22)}
+.project-dash span{display:block;color:var(--cyan);font:700 8px ui-monospace,monospace}.project-dash b{display:block;font-size:11px;margin-top:5px}.project-dash small{display:block;color:var(--muted);font-size:8px;margin-top:3px}
+.project-detail-panel{margin-top:9px}.project-detail{display:none;border:1px solid var(--line);border-radius:12px;padding:15px 17px;background:linear-gradient(100deg,rgba(66,220,255,.055),rgba(168,140,255,.035))}
+.project-detail.active{display:block;animation:panelIn .22s ease}.project-detail p{font-size:10px;max-width:820px}.project-meta{justify-content:flex-start;margin-top:10px}
+@keyframes panelIn{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}
+@media(max-width:850px){.mini-dashboard-grid,.project-dashboard-grid{grid-template-columns:1fr 1fr}.skill-detail{grid-template-columns:1fr}.detail-tags{justify-content:flex-start}.flow-dashboard{grid-template-columns:repeat(5,1fr)}}
+@media(max-width:560px){.mini-dashboard-grid,.project-dashboard-grid{grid-template-columns:1fr}.mini-dash{min-height:61px}.flow-dashboard{grid-template-columns:1fr 1fr}.flow-step:last-child{grid-column:1/-1}.flow-detail{grid-template-columns:1fr}.flow-status{white-space:normal}.skill-detail,.project-detail{padding:13px}.detail-tags span,.project-meta span{font-size:7px}}
+
 </style>
 
 </head>
@@ -157,57 +191,77 @@ section{padding:45px 6%}.section-title{font-size:clamp(28px,3.4vw,42px);letter-s
 <section id="skills">
   <div class="eyebrow">// TECH_STACK</div>
   <h2 class="section-title">Core Engineering Skills</h2>
-  <p class="section-sub">Skills represented from the uploaded CV, organised into an engineering-focused portfolio.</p>
+  <p class="section-sub">Click a capability to open its engineering snapshot. Compact, visual and easy to scan.</p>
 
-  <div class="grid">
-    <article class="card">
-      <h3>☁ Cloud & Infrastructure</h3>
-      <p>Design, administration and support of enterprise cloud and hybrid environments.</p>
-      <div class="tags"><span class="tag">Azure</span><span class="tag">AWS</span><span class="tag">Microsoft 365</span><span class="tag">Entra ID</span><span class="tag">Intune</span><span class="tag">AVD</span></div>
-    </article>
-    <article class="card">
-      <h3>⚙ Automation</h3>
-      <p>Automation and scripting used to improve operational efficiency and reduce repetitive work.</p>
-      <div class="tags"><span class="tag">PowerShell</span><span class="tag">Python</span><span class="tag">Bash</span><span class="tag">Ansible</span></div>
-    </article>
-    <article class="card">
-      <h3>🔐 Cybersecurity</h3>
-      <p>Security operations, monitoring, hardening, vulnerability management and governance.</p>
-      <div class="tags"><span class="tag">SIEM</span><span class="tag">EDR/XDR</span><span class="tag">Fortinet</span><span class="tag">ISO 27001</span><span class="tag">POPIA</span><span class="tag">GDPR</span></div>
-    </article>
-    <article class="card">
-      <h3>🖥 Virtualisation</h3>
-      <p>Enterprise server and virtualisation administration supporting resilient infrastructure.</p>
-      <div class="tags"><span class="tag">VMware</span><span class="tag">Hyper-V</span><span class="tag">Windows Server</span><span class="tag">Active Directory</span></div>
-    </article>
-    <article class="card">
-      <h3>🛡 Backup & DR</h3>
-      <p>Business continuity, recovery planning, backup verification and disaster recovery testing.</p>
-      <div class="tags"><span class="tag">Veeam</span><span class="tag">Azure Backup</span><span class="tag">RTO/RPO</span><span class="tag">DR Testing</span></div>
-    </article>
-    <article class="card">
-      <h3>🌐 Networking</h3>
-      <p>Enterprise connectivity, network security and infrastructure troubleshooting.</p>
-      <div class="tags"><span class="tag">Firewalls</span><span class="tag">VPN</span><span class="tag">VLAN</span><span class="tag">TCP/IP</span><span class="tag">LAN/WAN</span><span class="tag">DNS/DHCP</span></div>
-    </article>
+  <div class="mini-dashboard-grid" id="skillDashboard">
+    <button class="mini-dash active" data-skill="cloud">
+      <span class="mini-icon">☁</span><span><b>Cloud & Infrastructure</b><small>Azure · AWS · M365</small></span><strong>→</strong>
+    </button>
+    <button class="mini-dash" data-skill="automation">
+      <span class="mini-icon">⚙</span><span><b>Automation</b><small>PowerShell · Python · Bash</small></span><strong>→</strong>
+    </button>
+    <button class="mini-dash" data-skill="security">
+      <span class="mini-icon">⌁</span><span><b>Cybersecurity</b><small>SIEM · EDR/XDR · Fortinet</small></span><strong>→</strong>
+    </button>
+    <button class="mini-dash" data-skill="virtualisation">
+      <span class="mini-icon">▣</span><span><b>Virtualisation</b><small>VMware · Hyper-V · AD</small></span><strong>→</strong>
+    </button>
+    <button class="mini-dash" data-skill="backup">
+      <span class="mini-icon">◈</span><span><b>Backup & DR</b><small>Veeam · RTO/RPO</small></span><strong>→</strong>
+    </button>
+    <button class="mini-dash" data-skill="networking">
+      <span class="mini-icon">⌘</span><span><b>Networking</b><small>VPN · VLAN · DNS/DHCP</small></span><strong>→</strong>
+    </button>
+  </div>
+
+  <div class="skill-detail-shell">
+    <div class="skill-detail active" data-detail="cloud">
+      <div><span class="detail-kicker">CLOUD / HYBRID</span><h3>Cloud & Infrastructure</h3><p>Design, administration and support of enterprise cloud and hybrid environments.</p></div>
+      <div class="detail-tags"><span>Azure</span><span>AWS</span><span>Microsoft 365</span><span>Entra ID</span><span>Intune</span><span>AVD</span></div>
+    </div>
+    <div class="skill-detail" data-detail="automation">
+      <div><span class="detail-kicker">AUTOMATION</span><h3>Automation & Scripting</h3><p>Automation and scripting used to improve operational efficiency and reduce repetitive work.</p></div>
+      <div class="detail-tags"><span>PowerShell</span><span>Python</span><span>Bash</span><span>Ansible</span></div>
+    </div>
+    <div class="skill-detail" data-detail="security">
+      <div><span class="detail-kicker">SECURITY</span><h3>Cybersecurity</h3><p>Security operations, monitoring, hardening, vulnerability management and governance.</p></div>
+      <div class="detail-tags"><span>SIEM</span><span>EDR/XDR</span><span>Fortinet</span><span>ISO 27001</span><span>POPIA</span><span>GDPR</span></div>
+    </div>
+    <div class="skill-detail" data-detail="virtualisation">
+      <div><span class="detail-kicker">COMPUTE</span><h3>Virtualisation</h3><p>Enterprise server and virtualisation administration supporting resilient infrastructure.</p></div>
+      <div class="detail-tags"><span>VMware</span><span>Hyper-V</span><span>Windows Server</span><span>Active Directory</span></div>
+    </div>
+    <div class="skill-detail" data-detail="backup">
+      <div><span class="detail-kicker">RESILIENCE</span><h3>Backup & Disaster Recovery</h3><p>Business continuity, recovery planning, backup verification and disaster recovery testing.</p></div>
+      <div class="detail-tags"><span>Veeam</span><span>Azure Backup</span><span>RTO/RPO</span><span>DR Testing</span></div>
+    </div>
+    <div class="skill-detail" data-detail="networking">
+      <div><span class="detail-kicker">CONNECTIVITY</span><h3>Networking</h3><p>Enterprise connectivity, network security and infrastructure troubleshooting.</p></div>
+      <div class="detail-tags"><span>Firewalls</span><span>VPN</span><span>VLAN</span><span>TCP/IP</span><span>LAN/WAN</span><span>DNS/DHCP</span></div>
+    </div>
   </div>
 </section>
 
 <section id="automation">
   <div class="eyebrow">// AUTOMATION_FLOW</div>
   <h2 class="section-title">Infrastructure Automation</h2>
-  <p class="section-sub">A visual representation of how automation can connect code, configuration, infrastructure and monitoring.</p>
+  <p class="section-sub">A compact delivery dashboard showing how code becomes controlled, monitored infrastructure.</p>
 
-  <div class="pipeline">
-    <div class="node"><b>01</b>Code<br>Python / Bash</div>
-    <div class="node"><b>02</b>Configure<br>Ansible</div>
-    <div class="node"><b>03</b>Provision<br>Cloud / IaC</div>
-    <div class="node"><b>04</b>Secure<br>IAM / SIEM</div>
-    <div class="node"><b>05</b>Monitor<br>Operations</div>
+  <div class="flow-dashboard">
+    <button class="flow-step active" data-flow="code"><b>01</b><span>CODE</span><small>Python / Bash</small></button>
+    <button class="flow-step" data-flow="configure"><b>02</b><span>CONFIGURE</span><small>Ansible</small></button>
+    <button class="flow-step" data-flow="provision"><b>03</b><span>PROVISION</span><small>Cloud / IaC</small></button>
+    <button class="flow-step" data-flow="secure"><b>04</b><span>SECURE</span><small>IAM / SIEM</small></button>
+    <button class="flow-step" data-flow="monitor"><b>05</b><span>MONITOR</span><small>Operations</small></button>
   </div>
 
-  <div class="terminal" style="margin-top:35px">
-    <div class="termhead"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+  <div class="flow-detail" id="flowDetail">
+    <div><span class="detail-kicker">01 / CODE</span><h3>Start with repeatable engineering logic.</h3><p>Use scripting to turn manual operational work into consistent, repeatable tasks.</p></div>
+    <div class="flow-status"><span>●</span> READY <b>→</b> CONFIGURE</div>
+  </div>
+
+  <div class="terminal compact-terminal">
+    <div class="termhead"><span class="dot"></span><span class="dot"></span><span class="dot"></span><small>production-deploy</small></div>
     <div class="termbody">
       <div>$ <span class="cyan">automation</span> --environment production</div>
       <div>[<span class="green">OK</span>] validating infrastructure</div>
@@ -222,37 +276,48 @@ section{padding:45px 6%}.section-title{font-size:clamp(28px,3.4vw,42px);letter-s
 <section id="projects">
   <div class="eyebrow">// SELECTED_PROJECTS</div>
   <h2 class="section-title">Infrastructure & Cloud Projects</h2>
-  <div class="grid">
-    <article class="card">
-      <h3>Azure & Microsoft 365 Modernisation</h3>
+  <p class="section-sub">Select a project. The dashboard opens a concise view of the platform, focus and engineering outcome.</p>
+
+  <div class="project-dashboard-grid">
+    <button class="project-dash active" data-project="modernisation"><span>01</span><b>Azure & M365</b><small>Modernisation</small></button>
+    <button class="project-dash" data-project="avd"><span>02</span><b>Azure Virtual Desktop</b><small>Secure remote access</small></button>
+    <button class="project-dash" data-project="veeam"><span>03</span><b>Veeam Backup & DR</b><small>Resilience</small></button>
+    <button class="project-dash" data-project="aws"><span>04</span><b>AWS Infrastructure</b><small>Cloud workloads</small></button>
+    <button class="project-dash" data-project="security"><span>05</span><b>Cybersecurity</b><small>Hardening & monitoring</small></button>
+    <button class="project-dash" data-project="migration"><span>06</span><b>Infrastructure Modernisation</b><small>Migration & onboarding</small></button>
+  </div>
+
+  <div class="project-detail-panel">
+    <div class="project-detail active" data-project-detail="modernisation">
+      <span class="detail-kicker">01 / CLOUD MODERNISATION</span><h3>Azure & Microsoft 365 Modernisation</h3>
       <p>Migrated users and workloads to Microsoft 365, managed Entra ID integrations and implemented MFA and Conditional Access.</p>
-      <div class="tags"><span class="tag">Azure</span><span class="tag">M365</span><span class="tag">Entra ID</span><span class="tag">MFA</span></div>
-    </article>
-    <article class="card">
-      <h3>Azure Virtual Desktop</h3>
+      <div class="project-meta"><span>Azure</span><span>M365</span><span>Entra ID</span><span>MFA</span></div>
+    </div>
+    <div class="project-detail" data-project-detail="avd">
+      <span class="detail-kicker">02 / END USER CLOUD</span><h3>Azure Virtual Desktop</h3>
       <p>Configured AVD environments and secure remote access while supporting centralised desktop management.</p>
-      <div class="tags"><span class="tag">AVD</span><span class="tag">Azure</span><span class="tag">Remote Access</span></div>
-    </article>
-    <article class="card">
-      <h3>Veeam Backup & DR</h3>
+      <div class="project-meta"><span>AVD</span><span>Azure</span><span>Remote Access</span></div>
+    </div>
+    <div class="project-detail" data-project-detail="veeam">
+      <span class="detail-kicker">03 / RESILIENCE</span><h3>Veeam Backup & DR</h3>
       <p>Designed and maintained backup environments, recovery verification and simulations aligned with RTO/RPO objectives.</p>
-      <div class="tags"><span class="tag">Veeam</span><span class="tag">DR</span><span class="tag">RTO/RPO</span></div>
-    </article>
-    <article class="card">
-      <h3>AWS Cloud Infrastructure</h3>
+      <div class="project-meta"><span>Veeam</span><span>DR</span><span>RTO/RPO</span></div>
+    </div>
+    <div class="project-detail" data-project-detail="aws">
+      <span class="detail-kicker">04 / CLOUD INFRASTRUCTURE</span><h3>AWS Cloud Infrastructure</h3>
       <p>Provisioned and managed AWS workloads, cloud networking and security controls supporting hybrid environments.</p>
-      <div class="tags"><span class="tag">AWS</span><span class="tag">Networking</span><span class="tag">Security</span></div>
-    </article>
-    <article class="card">
-      <h3>Cybersecurity & Hardening</h3>
+      <div class="project-meta"><span>AWS</span><span>Networking</span><span>Security</span></div>
+    </div>
+    <div class="project-detail" data-project-detail="security">
+      <span class="detail-kicker">05 / CYBERSECURITY</span><h3>Cybersecurity & Hardening</h3>
       <p>Implemented SIEM monitoring and threat detection controls, improved incident response and supported ISO 27001 initiatives.</p>
-      <div class="tags"><span class="tag">SIEM</span><span class="tag">Security</span><span class="tag">ISO 27001</span></div>
-    </article>
-    <article class="card">
-      <h3>Infrastructure Modernisation</h3>
+      <div class="project-meta"><span>SIEM</span><span>Security</span><span>ISO 27001</span></div>
+    </div>
+    <div class="project-detail" data-project-detail="migration">
+      <span class="detail-kicker">06 / TRANSFORMATION</span><h3>Infrastructure Modernisation</h3>
       <p>Supported server migrations and cloud onboarding, including Active Directory, Intune, Exchange Online and SharePoint migrations.</p>
-      <div class="tags"><span class="tag">Migration</span><span class="tag">Intune</span><span class="tag">Exchange</span></div>
-    </article>
+      <div class="project-meta"><span>Migration</span><span>Intune</span><span>Exchange</span><span>SharePoint</span></div>
+    </div>
   </div>
 </section>
 
@@ -337,6 +402,48 @@ document.querySelectorAll('.filter-btn').forEach(button => {
     document.getElementById('project-' + button.dataset.project).classList.add('active');
   });
 });
+</script>
+
+<script>
+(function(){
+  const activate = (buttons, panels, key, attr) => {
+    buttons.forEach(btn => btn.addEventListener('click', () => {
+      buttons.forEach(b => b.classList.remove('active'));
+      panels.forEach(p => p.classList.remove('active'));
+      btn.classList.add('active');
+      const target = document.querySelector(`[${attr}="${btn.dataset[key]}"]`);
+      if(target) target.classList.add('active');
+    }));
+  };
+
+  activate(
+    [...document.querySelectorAll('.mini-dash')],
+    [...document.querySelectorAll('.skill-detail')],
+    'skill','data-detail'
+  );
+
+  const flowContent = {
+    code: ['01 / CODE','Start with repeatable engineering logic.','Use scripting to turn manual operational work into consistent, repeatable tasks.','READY','CONFIGURE'],
+    configure: ['02 / CONFIGURE','Apply configuration consistently.','Use Ansible to standardise configuration across supported environments.','CONFIGURED','PROVISION'],
+    provision: ['03 / PROVISION','Turn definitions into infrastructure.','Connect cloud and IaC concepts so infrastructure can be deployed predictably.','PROVISIONED','SECURE'],
+    secure: ['04 / SECURE','Build security into the delivery path.','Apply identity, access and security monitoring controls as part of infrastructure operations.','SECURED','MONITOR'],
+    monitor: ['05 / MONITOR','Close the loop with operations.','Use monitoring and operational feedback to keep environments observable and supportable.','MONITORED','COMPLETE']
+  };
+  document.querySelectorAll('.flow-step').forEach(btn => btn.addEventListener('click',()=>{
+    document.querySelectorAll('.flow-step').forEach(b=>b.classList.remove('active'));
+    btn.classList.add('active');
+    const d=flowContent[btn.dataset.flow];
+    document.querySelector('#flowDetail').innerHTML =
+      `<div><span class="detail-kicker">${d[0]}</span><h3>${d[1]}</h3><p>${d[2]}</p></div>
+       <div class="flow-status"><span>●</span> ${d[3]} <b>→</b> ${d[4]}</div>`;
+  }));
+
+  activate(
+    [...document.querySelectorAll('.project-dash')],
+    [...document.querySelectorAll('.project-detail')],
+    'project','data-project-detail'
+  );
+})();
 </script>
 
 <script>
