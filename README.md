@@ -154,12 +154,7 @@ footer{padding:35px 8%;border-top:1px solid var(--line);color:var(--muted);text-
       <a class="btn" href="mailto:Lungani.godsent.mncwango@gmail.com">Email Me</a>
     </div>
   </div>
-
-  <div class="profile-wrap">
-    <img src="C:\lungani-portfolio\assets\profile.png">
-  </div>
-</header>
-
+  
 <section id="skills">
   <div class="eyebrow">// TECH_STACK</div>
   <h2 class="section-title">Core Engineering Skills</h2>
@@ -269,7 +264,7 @@ footer{padding:35px 8%;border-top:1px solid var(--line);color:var(--muted);text-
     <div class="role">
       <div class="date">AUG 2025 — PRESENT</div>
       <h3>24/7 Senior Service Engineer — Network Infrastructure Support [EMEA]</h3>
-      <p>Wavenet. Complex IT troubleshooting, Microsoft 365, SharePoint, Intune, Azure/Entra ID/AVD, Active Directory, networking, firewalls, VPN, VMware/Hyper-V and Veeam. Mentors junior engineers and supports SLA compliance.</p>
+      <p>Wavenet. Complex IT troubleshooting, Microsoft 365, SharePoint, Intune, Azure/Entra ID/AVD, Active Directory, networking, firewalls, VPN, VMware/Hyper-V and Veeam. Deliver advanced technical support, taking ownership of complex incidents through to resolution. •Document recovery procedures and mentor junior engineers on backup best practices. •Ensure SLA compliance and continuous improvement in system resilience. and supports SLA compliance.</p>
     </div>
     <div class="role">
       <div class="date">FEB 2024 — AUG 2025</div>
@@ -285,8 +280,16 @@ footer{padding:35px 8%;border-top:1px solid var(--line);color:var(--muted);text-
       <div class="date">SEP 2019 — AUG 2022</div>
       <h3>Support Technician</h3>
       <p>Altron Bytes Managed Solutions. Technical support, backup monitoring, restore requests, audits, asset recovery documentation and field support across client environments.</p>
+    <div class="date">Feb 2018 – Apr 2019 </div>
+      <h3> Field Service Engineer</h3>
+      <p>Gijima Technology People - End user support to financial clients in the retail environment for speed point devices: installations, configuration, de-installations, maintenance, asset verification and management. Responsible for application and maintenance of assigned equipment and accurate timekeeping in ESS. 
+Provided field support for POS and retail banking systems, performing data restoration and system imaging as part of incident resolution. Ensured backup consistency and data retention compliance during onsite maintenance and equipment replacement. Supported large-scale banking and financial services environments. Maintained high availability of critical cash-management systems. Contributed to successful FNB and Capitec support initiatives. Achieved SLA compliance across field service operations. .</p>
     </div>
-  </div>
+    <div class="role">
+      <div class="date">Feb 2015 – Feb 2018</div>
+      <h3>IT Technician — Permanent</h3>
+      <p>Matrix Warehouse Computers  Office 365, Azure, Installed Microsoft 365, networks, and printers for clients. Supported Windows OS, Linux, and Windows Server 2012-16 environments. Delivered desktop support and implemented automated backup schedules using local and cloud-based solutions. Recovered client systems from OS failures and data corruption, maintaining 100% recovery rate on verified backups..</p>
+    </div>
 </section>
 
 <section id="contact">
