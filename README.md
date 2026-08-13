@@ -156,7 +156,7 @@ footer{padding:35px 8%;border-top:1px solid var(--line);color:var(--muted);text-
   </div>
 
   <div class="profile-wrap">
-    <img class="profile" src="assets/profile.png" alt="Lungani Mncwango">
+    <img src="C:\lungani-portfolio\assets\profile.png">
   </div>
 </header>
 
