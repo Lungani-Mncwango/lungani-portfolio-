@@ -1,10 +1,3 @@
-lungani-portfolio/
-│
-├── index.html
-├── Lungani-Mncwango-CV.docx
-│
-└── assets/
-    └── profile.png
 <!DOCTYPE html>
 <html lang="en">
 <head>
