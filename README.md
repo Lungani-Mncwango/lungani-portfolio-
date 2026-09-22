@@ -20,6 +20,16 @@ Open the portfolio file at `file:///C:/lungani-portfolio/index.html.html` in a m
 
 The site is designed for GitHub Pages. Before publishing, rename `index.html.html` to `index.html`, then commit and push it to the repository root. Keep the profile image at `assets/profile.png`.
 
+
+## Read
+</div>
+  </div>
+  <div class="hero-photo-wrap">
+    <img class="hero-photo" src="assets/profile.png" alt="Lungani Mncwango">
+    <img class="hero-photo" src="profile.png" alt="Lungani Mncwango">
+  </div>
+</header>
+
 ## Technologies
 
 - HTML5
