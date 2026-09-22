@@ -99,10 +99,10 @@ section{padding:45px 6%}.section-title{font-size:clamp(28px,3.4vw,42px);letter-s
       secure, monitor and support.
     </p>
     <div class="actions">
-      <a class="btn primary" href="#projects">Explore My Work</a>
-      <a class="btn" href="Lungani-Mncwango-CV.docx" download>Download CV</a>
-      <a class="btn" href="mailto:Lungani.godsent.mncwango@gmail.com">Email Me</a>
-    </div>
+  <a class="btn primary" href="#projects">Explore My Work</a>
+  <a class="btn" href="./Lungani-Mncwango-CV.docx" download="Lungani-Mncwango-CV.docx">Download CV</a>
+  <a class="btn" href="mailto:Lungani.godsent.mncwango@gmail.com">Email Me</a>
+</div>
   </div>
   
 
@@ -373,10 +373,10 @@ section{padding:45px 6%}.section-title{font-size:clamp(28px,3.4vw,42px);letter-s
       <p class="section-sub">Interested in cloud engineering, infrastructure, automation, cybersecurity or enterprise operations?</p>
     </div>
     <div class="actions">
-      <a class="btn primary" href="mailto:Lungani.godsent.mncwango@gmail.com">Email Me</a>
-      <a class="btn" href="tel:0840419402">Call Me</a>
-      <a class="btn" href="Lungani-Mncwango-CV.docx" download>Download CV</a>
-    </div>
+  <a class="btn primary" href="mailto:Lungani.godsent.mncwango@gmail.com">Email Me</a>
+  <a class="btn" href="tel:0840419402">Call Me</a>
+  <a class="btn" href="./Lungani-Mncwango-CV.docx" download="Lungani-Mncwango-CV.docx">Download CV</a>
+</div>
   </div>
 </section>
 
