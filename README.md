@@ -10,7 +10,7 @@ Personal portfolio website for Lungani Mncwango, highlighting cloud engineering,
 
 Open the portfolio file at `file:///C:/lungani-portfolio/index.html.html` in a modern web browser. No build tools or dependencies are required.
 
-## Files
+## Attach
 
 - `index.html.html` — Portfolio website (current local filename)
 - `assets/profile.png` — Hero-section profile photograph
