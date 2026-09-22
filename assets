@@ -1,1 +1,8 @@
 C:\lungani-portfolio\assets\profile.png
+</div>
+  </div>
+  <div class="hero-photo-wrap">
+    <img class="hero-photo" src="assets/profile.png" alt="Lungani Mncwango">
+    <img class="hero-photo" src="profile.png" alt="Lungani Mncwango">
+  </div>
+</header>
